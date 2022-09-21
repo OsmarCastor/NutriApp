@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">NutriApp</string>
+    <string name="titulo_mostrarPacientes">Lista de los Pacientes</string>
+    <string name="titulo_agregarPaciente">Agregar un Paciente</string>
+    <string name="nombre_paciente">Ingresa el nombre</string>
+    <string name="edad_paciente">Ingresa la Edad</string>
+    <string name="telefono_paciente">Ingresa el Teléfono</string>
+    <string name="peso_paciente">Ingresa el Peso(kg)</string>
+    <string name="talla_paciente">Ingresa la Estatura(cm)</string>
+    <string name="nacimiento_paciente">Fecha de Nacimiento</string>
+    <string name="actividadfisica">10: Sedentario</string>
+    <string name="actividadfisica2">20: Ligero</string>
+    <string name="actividadfisica3">30: Moderado</string>
+    <string name="actividadfisica4">40: Pesado</string>
+    <string name="porcentaje">Ingrese el % de actividad física:</string>
+    <string name="guardar">Guardar</string>
+    <string name="nombrePaciente">Expediente</string>
+</resources>

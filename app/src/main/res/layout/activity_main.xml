@@ -15,10 +15,9 @@
 
         <pl.droidsonroids.gif.GifImageView
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_weight=".5"
-            android:src="@drawable/nutriapp"
-        />
+            android:layout_height="match_parent"
+            android:src="@drawable/nutriapp"/>
+
     </LinearLayout>
     
 </RelativeLayout>

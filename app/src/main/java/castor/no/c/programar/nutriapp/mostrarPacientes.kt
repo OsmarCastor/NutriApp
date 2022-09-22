@@ -7,6 +7,8 @@ import android.view.View
 
 class mostrarPacientes : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        Thread.sleep(3000)
+        setTheme(R.style.Theme_NutriApp)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mostrar_pacientes)
     }

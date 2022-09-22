@@ -10,4 +10,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
+
+    override fun onStart() {
+        super.onStart()
+        Handler().postDelayed({
+            val intent = Intent(this, mostrarPaciente::class.java)
+            startActivity(intent)
+            finish()
+        }, 3000)
+    }
 }

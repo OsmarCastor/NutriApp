@@ -20,6 +20,7 @@ class agregarPaciente : AppCompatActivity() {
         txtFecha = findViewById(R.id.txtNacimiento)
         txtPeso = findViewById(R.id.txtPeso)
         txtEstatura = findViewById(R.id.txtEstatura)
+        supportActionBar?.hide()
     }
 
 }

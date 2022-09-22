@@ -9,6 +9,7 @@ class mostrarPaciente : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mostrar_paciente)
+        supportActionBar?.hide()
     }
     fun abrirAregar(v: View){
         val intent = Intent(this, agregarPaciente::class.java)

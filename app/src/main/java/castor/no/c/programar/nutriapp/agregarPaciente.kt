@@ -14,7 +14,7 @@ class agregarPaciente : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_agregar_paciente)
-        txtNombre = findViewById(R.id.txtNombre)
+        txtNombre = findViewById(R.id.txtNom)
         txtEdad = findViewById(R.id.txtEdad)
         txtTelefono = findViewById(R.id.txtTelefono)
         txtFecha = findViewById(R.id.txtNacimiento)

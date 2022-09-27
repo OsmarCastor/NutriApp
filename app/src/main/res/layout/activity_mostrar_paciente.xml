@@ -45,4 +45,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/ic_input_add"
         tools:ignore="SpeakableTextPresentCheck" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnForm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="10dp"
+        android:clickable="true"
+        android:onClick="abrirForm"
+        app:layout_constraintBottom_toTopOf="@+id/btnAbrirAgregar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/google_forms_64px"
+        tools:ignore="SpeakableTextPresentCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

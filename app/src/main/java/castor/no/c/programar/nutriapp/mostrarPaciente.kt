@@ -15,4 +15,8 @@ class mostrarPaciente : AppCompatActivity() {
         val intent = Intent(this, agregarPaciente::class.java)
         startActivity(intent)
     }
+    fun abrirForm(v: View){
+        val intent = Intent(this, formularioPaciente::class.java)
+        startActivity(intent)
+    }
 }

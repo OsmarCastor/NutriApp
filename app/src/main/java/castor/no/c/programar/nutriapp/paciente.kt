@@ -4,9 +4,9 @@ import java.util.Date
 
 data class paciente(
     val nombre:String,
-    val edad:Int,
+    val edad: String,
     val telefono:String,
-    val fecha:Date,
-    val peso:Float,
-    val estatura:Float
+    val fecha:String,
+    val peso:String,
+    val estatura:String
 )

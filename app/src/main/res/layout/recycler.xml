@@ -25,10 +25,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="15dp"
+        android:onClick="abrirForm"
         android:text="TextView"
         android:textSize="26sp"
         app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/txtAge"

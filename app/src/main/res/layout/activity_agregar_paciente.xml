@@ -146,6 +146,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="30dp"
+        android:onClick="agregarDatos"
         android:text="@string/agregar"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"

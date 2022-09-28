@@ -30,7 +30,7 @@ class mostrarPaciente : AppCompatActivity() {
         actualizarRecycler()
     }
     fun actualizarRecycler(){
-        val adaptador = baseDatitos(this, pacientes)
+        val adaptador = Adaptador(this, pacientes)
         recycler.adapter = adaptador
     }
 }

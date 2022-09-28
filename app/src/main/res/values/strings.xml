@@ -16,4 +16,7 @@
     <string name="guardar">Guardar</string>
     <string name="nombrePaciente">Expediente</string>
     <string name="agregar">Agregar</string>
+    <string name="boton_imc">Calcular IMC</string>
+    <string name="boton_peso">Calcular Peso Ideal</string>
+    <string name="boton_get">Calcular GET</string>
 </resources>

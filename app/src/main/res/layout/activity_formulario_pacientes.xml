@@ -48,7 +48,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btnIMC" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/txtFePa"
         android:layout_width="103dp"
         android:layout_height="46dp"
         android:layout_marginStart="44dp"
@@ -57,10 +57,10 @@
         android:textAlignment="viewEnd"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTelPa" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/txtTelPa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="76dp"
@@ -68,10 +68,10 @@
         android:text="Telefono:"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintTop_toBottomOf="@+id/txtEdPa" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/txtNomPa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
@@ -82,7 +82,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/txtEdPa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="108dp"
@@ -90,10 +90,10 @@
         android:text="Edad:"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/txtNomPa" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/txtEstPa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
@@ -101,7 +101,7 @@
         android:text="Estatura:"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/txtPesPa" />
 
     <TextView
         android:id="@+id/textView12"
@@ -123,7 +123,7 @@
         android:text="IMC:"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintTop_toBottomOf="@+id/txtEstPa" />
 
     <TextView
         android:id="@+id/textView13"
@@ -154,7 +154,7 @@
         android:layout_marginEnd="244dp"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintTop_toBottomOf="@+id/txtEstPa" />
 
     <TextView
         android:id="@+id/txtPesoIdeal"
@@ -167,7 +167,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/txtPesPa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="104dp"
@@ -175,7 +175,7 @@
         android:text="Peso:"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        app:layout_constraintTop_toBottomOf="@+id/txtFePa" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"

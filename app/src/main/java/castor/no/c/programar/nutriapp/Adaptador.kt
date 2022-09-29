@@ -22,7 +22,7 @@ class Adaptador(context: Context, private var datos:List<Pacientes>): RecyclerVi
     override fun onBindViewHolder(holder: ViewHolderPaciente, position: Int) {
         val paciente = datos[position]
         holder.txtNombre.text = paciente.nombre
-        holder.txtEdad.text = paciente.edad.toString()
+        holder.txtEdad.text = paciente.edad
     }
 
     override fun getItemCount(): Int = datos.size

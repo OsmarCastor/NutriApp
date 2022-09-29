@@ -5,4 +5,5 @@ import androidx.room.Room
 
 class PacientesApp : Application() {
     val room = Room.databaseBuilder(this, AppDatabase::class.java, "paciente").build()
+
 }

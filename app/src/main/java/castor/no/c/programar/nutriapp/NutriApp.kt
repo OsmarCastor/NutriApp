@@ -3,7 +3,7 @@ package castor.no.c.programar.nutriapp
 import android.app.Application
 import androidx.room.Room
 
-class PacientesApp : Application() {
+class NutriApp : Application() {
     lateinit var room: AppDatabase
 
     override fun onCreate() {

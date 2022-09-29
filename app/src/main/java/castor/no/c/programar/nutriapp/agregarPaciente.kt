@@ -6,6 +6,8 @@ import android.view.View
 import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.Toast
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
 
 class agregarPaciente : AppCompatActivity() {
     lateinit var txtNombre:EditText
@@ -19,6 +21,7 @@ class agregarPaciente : AppCompatActivity() {
     lateinit var rbModerado:RadioButton
     lateinit var rbPesado:RadioButton
     lateinit var porcentaje:String
+    lateinit var db :NutriApp
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_agregar_paciente)
@@ -32,6 +35,7 @@ class agregarPaciente : AppCompatActivity() {
         rbLigero = findViewById(R.id.rbLigero)
         rbModerado = findViewById(R.id.rbModerado)
         rbPesado = findViewById(R.id.rbPesado)
+        db = this.application as NutriApp
         supportActionBar?.hide()
     }
     fun agregarDatos(v: View) {
@@ -55,12 +59,11 @@ class agregarPaciente : AppCompatActivity() {
                 }
             }
         }
-        val paciente = Pacientes(1, nombre, edad, telefono, fecha, peso, estatura, porcentaje)
-        val dao = PacientesApp()
-        dao.room.pacienteDao().insert(paciente)
-        //mostrarPaciente.pacientes.add(Adaptador)
-        Toast.makeText(this, "Se agrego un paciente", Toast.LENGTH_LONG).show()
-        finish()
+        lifecycleScope.launch{
+            val paciente = Pacientes(1, nombre, edad, telefono, fecha, peso, estatura, "")
+            db.room.pacienteDao().insert(paciente)
+        }
+        Toast.makeText(this, "Estoy haciendo clic", Toast.LENGTH_LONG).show()
     }
 
 }

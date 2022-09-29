@@ -5,13 +5,13 @@ import androidx.room.*
 @Dao
 interface Sentencias {
     @Query("SELECT * FROM Pacientes")
-    fun getAll(): List<Pacientes>
+    suspend fun getAll(): List<Pacientes>
 
     @Update
-    fun update(persona: Pacientes)
+    suspend fun update(persona: Pacientes)
 
     @Insert
-    fun insert(persona: Pacientes)
+    suspend fun insert(persona: Pacientes)
 
 
 }

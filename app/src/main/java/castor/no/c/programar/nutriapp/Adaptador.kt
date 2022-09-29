@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class Adaptador(context: Context, private var datos:List<paciente>): RecyclerView.Adapter<Adaptador.ViewHolderPaciente>() {
+class Adaptador(context: Context, private var datos:List<Pacientes>): RecyclerView.Adapter<Adaptador.ViewHolderPaciente>() {
     class ViewHolderPaciente(item: View):RecyclerView.ViewHolder(item){
         var txtNombre: TextView = item.findViewById(R.id.txtNom)
         var txtEdad: TextView = item.findViewById(R.id.txtAge)

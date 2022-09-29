@@ -32,8 +32,8 @@ class agregarPaciente : AppCompatActivity() {
         val fecha = txtFecha.text.toString()
         val peso = txtPeso.text.toString()
         val estatura = txtEstatura.text.toString()
-        val persona = paciente(nombre, edad, telefono, fecha, peso, estatura)
-        mostrarPaciente.pacientes.add(persona)
+        //val Adaptador = Pacientes(nombre, edad, telefono, fecha, peso, estatura)
+        //mostrarPaciente.pacientes.add(Adaptador)
         Toast.makeText(this, "Se agrego un paciente", Toast.LENGTH_LONG).show()
         finish()
     }

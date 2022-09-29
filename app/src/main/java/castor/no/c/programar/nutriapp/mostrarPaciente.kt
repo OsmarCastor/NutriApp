@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 class mostrarPaciente : AppCompatActivity() {
     lateinit var recycler: RecyclerView
     companion object{
-        val pacientes = ArrayList<paciente>()
+        //val pacientes = ArrayList<paciente>()
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +30,7 @@ class mostrarPaciente : AppCompatActivity() {
         actualizarRecycler()
     }
     fun actualizarRecycler(){
-        val adaptador = Adaptador(this, pacientes)
-        recycler.adapter = adaptador
+        //val adaptador = Adaptador(this, pacientes)
+        //recycler.adapter = adaptador
     }
 }

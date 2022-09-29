@@ -11,7 +11,6 @@ class Adaptador(context: Context, private var datos:List<Pacientes>): RecyclerVi
     class ViewHolderPaciente(item: View):RecyclerView.ViewHolder(item){
         var txtNombre: TextView = item.findViewById(R.id.txtNom)
         var txtEdad: TextView = item.findViewById(R.id.txtAge)
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderPaciente {

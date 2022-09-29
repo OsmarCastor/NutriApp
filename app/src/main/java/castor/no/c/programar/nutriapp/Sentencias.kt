@@ -11,7 +11,7 @@ interface Sentencias {
     fun update(persona: Pacientes)
 
     @Insert
-    fun insert(paciente: List<Pacientes>)
+    fun insert(persona: Pacientes)
 
 
 }

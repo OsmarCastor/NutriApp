@@ -16,6 +16,7 @@ class mostrarPaciente : AppCompatActivity() {
         setContentView(R.layout.activity_mostrar_paciente)
         supportActionBar?.hide()
         recycler = findViewById(R.id.rv_persona)
+
     }
     fun abrirAregar(v: View){
         val intent = Intent(this, agregarPaciente::class.java)
@@ -30,7 +31,9 @@ class mostrarPaciente : AppCompatActivity() {
         actualizarRecycler()
     }
     fun actualizarRecycler(){
-        //val adaptador = Adaptador(this, pacientes)
-        //recycler.adapter = adaptador
+        val dao = PacientesApp()
+        val lista= dao.room.pacienteDao().getAll()
+        val adaptador = Adaptador(this, lista)
+        recycler.adapter = adaptador
     }
 }

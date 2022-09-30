@@ -9,4 +9,5 @@ class formularioPacientes : AppCompatActivity() {
         setContentView(R.layout.activity_formulario_pacientes)
         supportActionBar?.hide()
     }
+
 }

@@ -7,6 +7,7 @@ import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
+import kotlinx.android.synthetic.main.activity_agregar_paciente.*
 import kotlinx.coroutines.launch
 
 class agregarPaciente : AppCompatActivity() {
@@ -37,7 +38,17 @@ class agregarPaciente : AppCompatActivity() {
         rbPesado = findViewById(R.id.rbPesado)
         db = this.application as NutriApp
         supportActionBar?.hide()
+        txtNacimiento.setOnClickListener{showDatePickerDialog()}
     }
+
+    private fun showDatePickerDialog() {
+        val datePicker = DatePickerFragment {day, month, year -> onDateSelected(day, month, year)}
+        datePicker.show(supportFragmentManager, "datePicker")
+    }
+    fun onDateSelected(day:Int, month:Int, year:Int){
+        txtNacimiento.setText("$day/$month/$year")
+    }
+
     fun agregarDatos(v: View) {
         //Aqui agrego
         val nombre = txtNombre.text.toString()

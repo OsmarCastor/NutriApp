@@ -92,6 +92,8 @@
         android:ems="10"
         android:hint="@string/nacimiento_paciente"
         android:inputType="date"
+        android:clickable="false"
+        android:focusable="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtTelefono" />

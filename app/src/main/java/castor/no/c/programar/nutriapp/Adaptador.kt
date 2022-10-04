@@ -11,6 +11,7 @@ class Adaptador(context: Context, private var datos:List<Pacientes>): RecyclerVi
     class ViewHolderPersona(item: View):RecyclerView.ViewHolder(item){
         var txtNombre: TextView = item.findViewById(R.id.txtNom)
         var txtEdad: TextView = item.findViewById(R.id.txtAge)
+        var txtId: TextView = item.findViewById(R.id.txtId)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderPersona {
@@ -22,6 +23,7 @@ class Adaptador(context: Context, private var datos:List<Pacientes>): RecyclerVi
         val persona = datos[position]
         holder.txtNombre.text = persona.nombre
         holder.txtEdad.text = persona.edad
+        holder.txtId.text = persona.idPaciente.toString()
     }
 
     override fun getItemCount(): Int = datos.size

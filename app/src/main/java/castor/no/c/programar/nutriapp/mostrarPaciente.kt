@@ -19,7 +19,6 @@ class mostrarPaciente : AppCompatActivity() {
         supportActionBar?.hide()
         recycler = findViewById(R.id.rv_persona)
         db = this.application as NutriApp
-        Log.e("Algo","asasas")
     }
     fun abrirAregar(v: View){
         val intent = Intent(this, agregarPaciente::class.java)

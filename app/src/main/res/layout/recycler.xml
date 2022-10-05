@@ -43,26 +43,4 @@
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/txtNom" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="58dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="65dp"
-        android:layout_marginEnd="70dp"
-        android:layout_marginBottom="30dp"
-        android:text="Id:"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txtAge"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/txtId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="65dp"
-        android:layout_marginEnd="100dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,5 +14,5 @@ data class Pacientes(
     @ColumnInfo(name = "Fecha_Nacimiento") val fecha: String?,
     @ColumnInfo(name = "Peso") val peso: String?,
     @ColumnInfo(name = "Estatura") val talla: String?,
-    @ColumnInfo(name = "Porcentaje_Actividad_Física") val porcentaje: String?
+    @ColumnInfo(name = "Porcentaje_Actividad_Física") val porcentaje: Int?
 )

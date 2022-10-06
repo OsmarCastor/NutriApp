@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
-import android.widget.RadioButton
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import kotlinx.android.synthetic.main.activity_agregar_paciente.*
@@ -17,11 +16,13 @@ class agregarPaciente : AppCompatActivity() {
     lateinit var txtFecha:EditText
     lateinit var txtPeso:EditText
     lateinit var txtEstatura:EditText
-    lateinit var rbSedentario:RadioButton
+    lateinit var txtPorcentaje:EditText
+    /*lateinit var rbSedentario:RadioButton
     lateinit var rbLigero:RadioButton
     lateinit var rbModerado:RadioButton
     lateinit var rbPesado:RadioButton
     lateinit var porcentaje:String
+     */
     lateinit var db :NutriApp
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,10 +33,12 @@ class agregarPaciente : AppCompatActivity() {
         txtFecha = findViewById(R.id.txtNacimiento)
         txtPeso = findViewById(R.id.txtPeso)
         txtEstatura = findViewById(R.id.txtEstatura)
-        rbSedentario = findViewById(R.id.rbSedentario)
+        txtPorcentaje = findViewById(R.id.txtPA)
+        /*rbSedentario = findViewById(R.id.rbSedentario)
         rbLigero = findViewById(R.id.rbLigero)
         rbModerado = findViewById(R.id.rbModerado)
         rbPesado = findViewById(R.id.rbPesado)
+         */
         db = this.application as NutriApp
         supportActionBar?.hide()
         txtNacimiento.setOnClickListener{showDatePickerDialog()}
@@ -57,11 +60,13 @@ class agregarPaciente : AppCompatActivity() {
         val fecha = txtFecha.text.toString()
         val peso = txtPeso.text.toString()
         val estatura = txtEstatura.text.toString()
-        if (rbSedentario.isChecked == true){
+        val porcentaje = txtPorcentaje.text.toString().toInt()
+        /*if (rbSedentario.isChecked == true){
             porcentaje = rbSedentario.text.toString()
         }else{
             if (rbLigero.isChecked == true){
                 porcentaje = rbLigero.text.toString()
+
             }else{
                 if (rbModerado.isChecked == true){
                     porcentaje = rbModerado.text.toString()
@@ -70,6 +75,7 @@ class agregarPaciente : AppCompatActivity() {
                 }
             }
         }
+         */
         lifecycleScope.launch{
             val paciente = Pacientes(0, nombre, edad, telefono, fecha, peso, estatura, porcentaje)
             db.room.pacienteDao().insert(paciente)

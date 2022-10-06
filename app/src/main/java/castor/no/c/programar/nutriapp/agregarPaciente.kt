@@ -77,7 +77,7 @@ class agregarPaciente : AppCompatActivity() {
         }
          */
         lifecycleScope.launch{
-            val paciente = Pacientes(0, nombre, edad, telefono, fecha, peso, estatura, porcentaje)
+            val paciente = Pacientes(0, nombre, edad, telefono, fecha, peso, estatura, porcentaje,"NA","NA","NA")
             db.room.pacienteDao().insert(paciente)
         }
         Toast.makeText(this, "Paciente Registrado", Toast.LENGTH_LONG).show()

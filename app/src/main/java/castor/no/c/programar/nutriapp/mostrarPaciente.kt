@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.TextView
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.launch
@@ -13,6 +14,7 @@ import kotlin.math.log
 class mostrarPaciente : AppCompatActivity() {
     lateinit var recycler: RecyclerView
     lateinit var db :NutriApp
+    lateinit var txtNombre:TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mostrar_paciente)
@@ -26,6 +28,7 @@ class mostrarPaciente : AppCompatActivity() {
     }
     fun abrirForm(v: View){
         val intent = Intent(this, formularioPacientes::class.java)
+        intent.putExtra("idpaciente",1)
         startActivity(intent)
     }
     override fun onPostResume() {

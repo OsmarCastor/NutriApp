@@ -40,6 +40,7 @@ class formularioPacientes : AppCompatActivity() {
         txtImc = findViewById(R.id.txtImcPaciente)
         txtPi = findViewById(R.id.txtPiPaciente)
         txtGet = findViewById(R.id.txtGetPAciente)
+        mostrarPaciente()
     }
     fun salir(v: View) {
         finish()
@@ -63,9 +64,24 @@ class formularioPacientes : AppCompatActivity() {
         finish()
     }
     fun hacerIMC(v: View){
+        //Aqui hacer operacion de peso*(altura)^2
+        val peso = txtPeso.text.toString().toInt()
+        val estatura = txtEstatura.text.toString().toInt()
+        val exponente = 2
+        val potencia = Math.pow(estatura.toDouble(), exponente.toDouble())
+        val imc = peso/(potencia)
+        txtImc.text = imc.toString()
     }
     fun hacerPI(v: View){
+        //Aqui hacer
     }
     fun hacerGET(v: View){
+    }
+    fun mostrarPaciente(){
+        val idpaciente = intent.getIntExtra("idpaciente", 1)
+        txtId.text = idpaciente.toString()
+        lifecycleScope.launch{
+            db.room.pacienteDao().getById(idpaciente)
+        }
     }
 }

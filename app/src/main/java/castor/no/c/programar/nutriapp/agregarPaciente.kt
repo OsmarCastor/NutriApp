@@ -61,23 +61,8 @@ class agregarPaciente : AppCompatActivity() {
         val peso = txtPeso.text.toString()
         val estatura = txtEstatura.text.toString()
         val porcentaje = txtPorcentaje.text.toString().toInt()
-        /*if (rbSedentario.isChecked == true){
-            porcentaje = rbSedentario.text.toString()
-        }else{
-            if (rbLigero.isChecked == true){
-                porcentaje = rbLigero.text.toString()
-
-            }else{
-                if (rbModerado.isChecked == true){
-                    porcentaje = rbModerado.text.toString()
-                }else{
-                    porcentaje = rbPesado.text.toString()
-                }
-            }
-        }
-         */
         lifecycleScope.launch{
-            val paciente = Pacientes(0, nombre, edad, telefono, fecha, peso, estatura, porcentaje,"NA","NA","NA")
+            val paciente = Pacientes(0, nombre, edad, telefono, fecha, peso, estatura, porcentaje,0,0,0)
             db.room.pacienteDao().insert(paciente)
         }
         Toast.makeText(this, "Paciente Registrado", Toast.LENGTH_LONG).show()

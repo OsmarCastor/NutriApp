@@ -15,8 +15,8 @@ data class Pacientes(
     @ColumnInfo(name = "Peso") val peso: String?,
     @ColumnInfo(name = "Estatura") val talla: String?,
     @ColumnInfo(name = "Porcentaje_Actividad_Física") val porcentaje: Int?,
-    @ColumnInfo(name = "IMC") val imc: String?,
-    @ColumnInfo(name = "Peso_Ideal") val pi: String?,
-    @ColumnInfo(name = "GET") val get: String?
+    @ColumnInfo(name = "IMC") val imc: Int?,
+    @ColumnInfo(name = "Peso_Ideal") val pi: Int?,
+    @ColumnInfo(name = "GET") val get: Int?
 
 )

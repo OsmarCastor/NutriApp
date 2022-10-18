@@ -14,7 +14,6 @@ import kotlin.math.log
 class mostrarPaciente : AppCompatActivity() {
     lateinit var recycler: RecyclerView
     lateinit var db :NutriApp
-    lateinit var txtNombre:TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mostrar_paciente)

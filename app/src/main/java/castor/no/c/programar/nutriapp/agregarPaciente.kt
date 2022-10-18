@@ -17,12 +17,6 @@ class agregarPaciente : AppCompatActivity() {
     lateinit var txtPeso:EditText
     lateinit var txtEstatura:EditText
     lateinit var txtPorcentaje:EditText
-    /*lateinit var rbSedentario:RadioButton
-    lateinit var rbLigero:RadioButton
-    lateinit var rbModerado:RadioButton
-    lateinit var rbPesado:RadioButton
-    lateinit var porcentaje:String
-     */
     lateinit var db :NutriApp
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,18 +28,13 @@ class agregarPaciente : AppCompatActivity() {
         txtPeso = findViewById(R.id.txtPeso)
         txtEstatura = findViewById(R.id.txtEstatura)
         txtPorcentaje = findViewById(R.id.txtPA)
-        /*rbSedentario = findViewById(R.id.rbSedentario)
-        rbLigero = findViewById(R.id.rbLigero)
-        rbModerado = findViewById(R.id.rbModerado)
-        rbPesado = findViewById(R.id.rbPesado)
-         */
         db = this.application as NutriApp
         supportActionBar?.hide()
         txtNacimiento.setOnClickListener{showDatePickerDialog()}
     }
 
     private fun showDatePickerDialog() {
-        val datePicker = DatePickerFragment {day, month, year -> onDateSelected(day, month, year)}
+        val datePicker = DatePickerFragment {day, month, year -> onDateSelected(day, month+1, year)}
         datePicker.show(supportFragmentManager, "datePicker")
     }
     fun onDateSelected(day:Int, month:Int, year:Int){

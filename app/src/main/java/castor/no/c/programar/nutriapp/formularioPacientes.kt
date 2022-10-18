@@ -1,11 +1,8 @@
 package castor.no.c.programar.nutriapp
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.EditText
-import android.widget.RadioButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
@@ -40,7 +37,16 @@ class formularioPacientes : AppCompatActivity() {
         txtImc = findViewById(R.id.txtImcPaciente)
         txtPi = findViewById(R.id.txtPiPaciente)
         txtGet = findViewById(R.id.txtGetPAciente)
-        mostrarPaciente()
+        lifecycleScope.launch{
+                val bundle:Bundle?=intent.extras
+                bundle?.let {
+                    bundle.apply {
+                        val int:Int=getInt("idpaciente",1)
+                        db.room.pacienteDao().getById(int)
+                        txtId.text = int.toString()
+                    }
+            }
+        }
     }
     fun salir(v: View) {
         finish()

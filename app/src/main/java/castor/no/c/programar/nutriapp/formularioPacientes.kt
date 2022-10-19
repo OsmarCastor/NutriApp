@@ -80,13 +80,15 @@ class formularioPacientes : AppCompatActivity() {
         val estatura = txtEstatura.text.toString().toInt()
         val exponente = 2
         val potencia = Math.pow(estatura.toDouble(), exponente.toDouble())
-        val imc = peso/(potencia)
+        val res = peso/(potencia)
+        val imc = res*10000
         txtImc.text = imc.toString()
     }
     fun hacerPI(v: View){
         //Aqui hacer PI
         val estatura = txtEstatura.text.toString().toInt()
         val pi = (50+(.75+(estatura-150)))
+        txtPi.text = pi.toString()
     }
     fun hacerGET(v: View){
     }

@@ -8,7 +8,7 @@ interface Sentencias {
     suspend fun getAll(): List<Pacientes>
 
     @Query("SELECT * FROM Pacientes WHERE idPaciente IN (:idenPaciente)")
-    suspend fun getById(idenPaciente: Int): List<Pacientes>
+    suspend fun getById(idenPaciente: Int): Pacientes
 
     @Update
     suspend fun update(persona: Pacientes)

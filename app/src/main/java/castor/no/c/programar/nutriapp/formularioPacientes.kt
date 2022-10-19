@@ -37,15 +37,20 @@ class formularioPacientes : AppCompatActivity() {
         txtImc = findViewById(R.id.txtImcPaciente)
         txtPi = findViewById(R.id.txtPiPaciente)
         txtGet = findViewById(R.id.txtGetPAciente)
+        var id = intent.getIntExtra("idpaciente", 0)
         lifecycleScope.launch{
-                val bundle:Bundle?=intent.extras
-                bundle?.let {
-                    bundle.apply {
-                        val int:Int=getInt("idpaciente",1)
-                        db.room.pacienteDao().getById(int)
-                        txtId.text = int.toString()
-                    }
-            }
+            var paciente = db.room.pacienteDao().getById(id)
+            txtId.text = id.toString()
+            txtNombre.text = paciente.nombre
+            txtEdad.text = paciente.edad
+            txtEstatura.text = paciente.talla
+            txtPeso.text = paciente.peso
+            txtFecha.text = paciente.fecha
+            txtTelefono.text = paciente.telefono
+            txtImc.text = paciente.imc.toString()
+            txtPi.text = paciente.pi.toString()
+            txtGet.text = paciente.get.toString()
+            txtPorcentaje.text = paciente.porcentaje.toString()
         }
     }
     fun salir(v: View) {
@@ -79,15 +84,10 @@ class formularioPacientes : AppCompatActivity() {
         txtImc.text = imc.toString()
     }
     fun hacerPI(v: View){
-        //Aqui hacer
+        //Aqui hacer PI
+        val estatura = txtEstatura.text.toString().toInt()
+        val pi = (50+(.75+(estatura-150)))
     }
     fun hacerGET(v: View){
-    }
-    fun mostrarPaciente(){
-        val idpaciente = intent.getIntExtra("idpaciente", 1)
-        txtId.text = idpaciente.toString()
-        lifecycleScope.launch{
-            db.room.pacienteDao().getById(idpaciente)
-        }
     }
 }

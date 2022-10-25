@@ -28,7 +28,8 @@
         android:hint="@string/nombre_paciente"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/txtEdad"
@@ -41,7 +42,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNom" />
+        app:layout_constraintTop_toBottomOf="@+id/txtNom"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/txtTelefono"
@@ -54,7 +56,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtEdad" />
+        app:layout_constraintTop_toBottomOf="@+id/txtEdad"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/txtPeso"
@@ -67,7 +70,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNacimiento" />
+        app:layout_constraintTop_toBottomOf="@+id/txtNacimiento"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/txtEstatura"
@@ -80,7 +84,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPeso" />
+        app:layout_constraintTop_toBottomOf="@+id/txtPeso"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/txtPA"
@@ -93,7 +98,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtEstatura" />
+        app:layout_constraintTop_toBottomOf="@+id/txtEstatura"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
     <EditText
         android:id="@+id/txtNacimiento"
@@ -109,7 +115,9 @@
         android:inputType="date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTelefono" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTelefono"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck"
+        android:importantForAutofill="no" />
 
     <Button
         android:id="@+id/btnAbrirAgregar"
@@ -121,6 +129,7 @@
         android:text="@string/agregar"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

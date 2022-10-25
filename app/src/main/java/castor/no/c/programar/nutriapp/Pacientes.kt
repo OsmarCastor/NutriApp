@@ -12,11 +12,11 @@ data class Pacientes(
     @ColumnInfo(name = "Edad") val edad: String?,
     @ColumnInfo(name = "Telefono") val telefono: String?,
     @ColumnInfo(name = "Fecha_Nacimiento") val fecha: String?,
-    @ColumnInfo(name = "Peso") val peso: String?,
-    @ColumnInfo(name = "Estatura") val talla: String?,
+    @ColumnInfo(name = "Peso") val peso: Double?,
+    @ColumnInfo(name = "Estatura") val talla: Double?,
     @ColumnInfo(name = "Porcentaje_Actividad_Física") val porcentaje: Int?,
-    @ColumnInfo(name = "IMC") val imc: Int?,
-    @ColumnInfo(name = "Peso_Ideal") val pi: Int?,
-    @ColumnInfo(name = "GET") val get: Int?
+    @ColumnInfo(name = "IMC") val imc: Double?,
+    @ColumnInfo(name = "Peso_Ideal") val pi: Double?,
+    @ColumnInfo(name = "GET") val get: Double?
 
 )

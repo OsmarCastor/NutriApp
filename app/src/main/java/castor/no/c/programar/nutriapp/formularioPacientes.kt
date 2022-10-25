@@ -37,14 +37,14 @@ class formularioPacientes : AppCompatActivity() {
         txtImc = findViewById(R.id.txtImcPaciente)
         txtPi = findViewById(R.id.txtPiPaciente)
         txtGet = findViewById(R.id.txtGetPAciente)
-        var id = intent.getIntExtra("idpaciente", 0)
+        val id = intent.getIntExtra("idpaciente", 0)
         lifecycleScope.launch{
-            var paciente = db.room.pacienteDao().getById(id)
+            val paciente = db.room.pacienteDao().getById(id)
             txtId.text = id.toString()
             txtNombre.text = paciente.nombre
             txtEdad.text = paciente.edad
-            txtEstatura.text = paciente.talla
-            txtPeso.text = paciente.peso
+            txtEstatura.text = paciente.talla.toString()
+            txtPeso.text = paciente.peso.toString()
             txtFecha.text = paciente.fecha
             txtTelefono.text = paciente.telefono
             txtImc.text = paciente.imc.toString()
@@ -57,18 +57,19 @@ class formularioPacientes : AppCompatActivity() {
         finish()
     }
     fun guardarBD(v: View){
+        val id = txtId.text.toString().toInt()
         val nombre = txtNombre.text.toString()
         val edad = txtEdad.text.toString()
         val telefono = txtTelefono.text.toString()
         val fecha = txtFecha.text.toString()
-        val peso = txtPeso.text.toString()
-        val estatura = txtEstatura.text.toString()
+        val peso = txtPeso.text.toString().toDouble()
+        val estatura = txtEstatura.text.toString().toDouble()
         val porcentaje = txtPorcentaje.text.toString().toInt()
-        val imc = txtImc.text.toString().toInt()
-        val pi = txtPi.text.toString().toInt()
-        val get = txtGet.text.toString().toInt()
+        val imc = txtImc.text.toString().toDouble()
+        val pi = txtPi.text.toString().toDouble()
+        val get = txtGet.text.toString().toDouble()
         lifecycleScope.launch{
-            val paciente = Pacientes(0, nombre, edad, telefono, fecha, peso, estatura, porcentaje,imc, pi, get)
+            val paciente = Pacientes(id, nombre, edad, telefono, fecha, peso, estatura, porcentaje, imc, pi, get)
             db.room.pacienteDao().update(paciente)
         }
         Toast.makeText(this, "Datos Registrados", Toast.LENGTH_LONG).show()
@@ -76,17 +77,17 @@ class formularioPacientes : AppCompatActivity() {
     }
     fun hacerIMC(v: View){
         //Aqui hacer operacion de peso*(altura)^2
-        val peso = txtPeso.text.toString().toInt()
-        val estatura = txtEstatura.text.toString().toInt()
+        val peso = txtPeso.text.toString().toDouble()
+        val estatura = txtEstatura.text.toString().toDouble()
         val exponente = 2
-        val potencia = Math.pow(estatura.toDouble(), exponente.toDouble())
-        val res = peso/(potencia)
+        val potencia = Math.pow(estatura, exponente.toDouble())
+        var res = peso/(potencia)
         val imc = res*10000
         txtImc.text = imc.toString()
     }
     fun hacerPI(v: View){
         //Aqui hacer PI
-        val estatura = txtEstatura.text.toString().toInt()
+        val estatura = txtEstatura.text.toString().toDouble()
         val pi = (50+(.75+(estatura-150)))
         txtPi.text = pi.toString()
     }

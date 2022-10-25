@@ -72,7 +72,7 @@ class formularioPacientes : AppCompatActivity() {
         val pi = txtPi.text.toString().toDouble()
         val get = txtGet.text.toString().toDouble()
         lifecycleScope.launch{
-            val paciente = Pacientes(id, nombre, edad, telefono, fecha, peso, estatura, porcentaje, imc, pi, get)
+            val paciente = Pacientes(id, nombre, edad, sexo, telefono, fecha, peso, estatura, porcentaje, imc, pi, get)
             db.room.pacienteDao().update(paciente)
         }
         Toast.makeText(this, "Datos Registrados", Toast.LENGTH_LONG).show()

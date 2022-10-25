@@ -12,6 +12,7 @@ import kotlinx.coroutines.launch
 class agregarPaciente : AppCompatActivity() {
     lateinit var txtNombre:EditText
     lateinit var txtEdad:EditText
+    lateinit var txtSexo:EditText
     lateinit var txtTelefono:EditText
     lateinit var txtFecha:EditText
     lateinit var txtPeso:EditText
@@ -23,6 +24,7 @@ class agregarPaciente : AppCompatActivity() {
         setContentView(R.layout.activity_agregar_paciente)
         txtNombre = findViewById(R.id.txtNom)
         txtEdad = findViewById(R.id.txtEdad)
+        txtSexo = findViewById(R.id.txtSex)
         txtTelefono = findViewById(R.id.txtTelefono)
         txtFecha = findViewById(R.id.txtNacimiento)
         txtPeso = findViewById(R.id.txtPeso)
@@ -45,13 +47,14 @@ class agregarPaciente : AppCompatActivity() {
         //Aqui agrego
         val nombre = txtNombre.text.toString()
         val edad = txtEdad.text.toString()
+        val sexo = txtSexo.text.toString()
         val telefono = txtTelefono.text.toString()
         val fecha = txtFecha.text.toString()
         val peso = txtPeso.text.toString().toDouble()
         val estatura = txtEstatura.text.toString().toDouble()
         val porcentaje = txtPorcentaje.text.toString().toInt()
         lifecycleScope.launch{
-            val paciente = Pacientes(0, nombre, edad, telefono, fecha, peso, estatura, porcentaje,0.0,0.0,0.0)
+            val paciente = Pacientes(0, nombre, edad, sexo, telefono, fecha, peso, estatura, porcentaje,0.0,0.0,0.0)
             db.room.pacienteDao().insert(paciente)
         }
         Toast.makeText(this, "Paciente Registrado", Toast.LENGTH_LONG).show()

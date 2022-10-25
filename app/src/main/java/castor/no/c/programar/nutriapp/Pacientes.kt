@@ -10,6 +10,7 @@ data class Pacientes(
     @PrimaryKey(autoGenerate = true) val idPaciente: Int,
     @ColumnInfo(name = "Nombre") val nombre: String?,
     @ColumnInfo(name = "Edad") val edad: String?,
+    @ColumnInfo(name = "Sexo") val sexo: String?,
     @ColumnInfo(name = "Telefono") val telefono: String?,
     @ColumnInfo(name = "Fecha_Nacimiento") val fecha: String?,
     @ColumnInfo(name = "Peso") val peso: Double?,

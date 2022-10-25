@@ -12,6 +12,7 @@ class formularioPacientes : AppCompatActivity() {
     lateinit var txtId:TextView
     lateinit var txtNombre:TextView
     lateinit var txtEdad:TextView
+    lateinit var txtSexo:TextView
     lateinit var txtTelefono:TextView
     lateinit var txtFecha:TextView
     lateinit var txtPeso:TextView
@@ -29,6 +30,7 @@ class formularioPacientes : AppCompatActivity() {
         txtId = findViewById(R.id.txtIdPaciente)
         txtNombre = findViewById(R.id.txtNomPaciente)
         txtEdad = findViewById(R.id.txtEdadPaciente)
+        txtSexo = findViewById(R.id.txtSexo)
         txtTelefono = findViewById(R.id.txtTelPaciente)
         txtFecha = findViewById(R.id.txtFechaPaciente)
         txtPeso = findViewById(R.id.txtPesoPaciente)
@@ -60,6 +62,7 @@ class formularioPacientes : AppCompatActivity() {
         val id = txtId.text.toString().toInt()
         val nombre = txtNombre.text.toString()
         val edad = txtEdad.text.toString()
+        val sexo = txtSexo.text.toString()
         val telefono = txtTelefono.text.toString()
         val fecha = txtFecha.text.toString()
         val peso = txtPeso.text.toString().toDouble()

@@ -18,6 +18,7 @@ data class Pacientes(
     @ColumnInfo(name = "Porcentaje_Actividad_Física") val porcentaje: Int?,
     @ColumnInfo(name = "IMC") val imc: Double?,
     @ColumnInfo(name = "Peso_Ideal") val pi: Double?,
-    @ColumnInfo(name = "GET") val get: Double?
+    @ColumnInfo(name = "GET") val get: Double?,
+    @ColumnInfo(name = "GEB") val geb: Double?
 
 )

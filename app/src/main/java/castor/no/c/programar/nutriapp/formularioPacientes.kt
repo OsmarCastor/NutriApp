@@ -21,6 +21,7 @@ class formularioPacientes : AppCompatActivity() {
     lateinit var txtImc:TextView
     lateinit var txtPi:TextView
     lateinit var txtGet:TextView
+    lateinit var txtGeb:TextView
     lateinit var db :NutriApp
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +40,7 @@ class formularioPacientes : AppCompatActivity() {
         txtImc = findViewById(R.id.txtImcPaciente)
         txtPi = findViewById(R.id.txtPiPaciente)
         txtGet = findViewById(R.id.txtGetPAciente)
+        txtGet = findViewById(R.id.txtGebPaciente)
         val id = intent.getIntExtra("idpaciente", 0)
         lifecycleScope.launch{
             val paciente = db.room.pacienteDao().getById(id)
@@ -71,8 +73,9 @@ class formularioPacientes : AppCompatActivity() {
         val imc = txtImc.text.toString().toDouble()
         val pi = txtPi.text.toString().toDouble()
         val get = txtGet.text.toString().toDouble()
+        val geb = txtGeb.text.toString().toDouble()
         lifecycleScope.launch{
-            val paciente = Pacientes(id, nombre, edad, sexo, telefono, fecha, peso, estatura, porcentaje, imc, pi, get)
+            val paciente = Pacientes(id, nombre, edad, sexo, telefono, fecha, peso, estatura, porcentaje, imc, pi, get, geb)
             db.room.pacienteDao().update(paciente)
         }
         Toast.makeText(this, "Datos Registrados", Toast.LENGTH_LONG).show()
@@ -95,5 +98,8 @@ class formularioPacientes : AppCompatActivity() {
         txtPi.text = pi.toString()
     }
     fun hacerGET(v: View){
+    }
+    fun hacerGEB(v: View){
+
     }
 }

@@ -54,7 +54,7 @@ class agregarPaciente : AppCompatActivity() {
         val estatura = txtEstatura.text.toString().toDouble()
         val porcentaje = txtPorcentaje.text.toString().toInt()
         lifecycleScope.launch{
-            val paciente = Pacientes(0, nombre, edad, sexo, telefono, fecha, peso, estatura, porcentaje,0.0,0.0,0.0)
+            val paciente = Pacientes(0, nombre, edad, sexo, telefono, fecha, peso, estatura, porcentaje,0.0,0.0,0.0, 0.0)
             db.room.pacienteDao().insert(paciente)
         }
         Toast.makeText(this, "Paciente Registrado", Toast.LENGTH_LONG).show()

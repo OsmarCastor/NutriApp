@@ -20,4 +20,5 @@
     <string name="boton_peso">Calcular Peso Ideal</string>
     <string name="boton_get">Calcular GET</string>
     <string name="stringsexo">Sexo</string>
+    <string name="boton_geb">Calcular GEB</string>
 </resources>

@@ -7,6 +7,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
+import kotlin.math.roundToInt
 
 class formularioPacientes : AppCompatActivity() {
     lateinit var txtId:TextView
@@ -40,13 +41,14 @@ class formularioPacientes : AppCompatActivity() {
         txtImc = findViewById(R.id.txtImcPaciente)
         txtPi = findViewById(R.id.txtPiPaciente)
         txtGet = findViewById(R.id.txtGetPAciente)
-        txtGet = findViewById(R.id.txtGebPaciente)
+        txtGeb = findViewById(R.id.txtGebPaciente)
         val id = intent.getIntExtra("idpaciente", 0)
         lifecycleScope.launch{
             val paciente = db.room.pacienteDao().getById(id)
             txtId.text = id.toString()
             txtNombre.text = paciente.nombre
             txtEdad.text = paciente.edad
+            txtSexo.text = paciente.sexo
             txtEstatura.text = paciente.talla.toString()
             txtPeso.text = paciente.peso.toString()
             txtFecha.text = paciente.fecha
@@ -54,6 +56,7 @@ class formularioPacientes : AppCompatActivity() {
             txtImc.text = paciente.imc.toString()
             txtPi.text = paciente.pi.toString()
             txtGet.text = paciente.get.toString()
+            txtGeb.text = paciente.get.toString()
             txtPorcentaje.text = paciente.porcentaje.toString()
         }
     }
@@ -89,7 +92,8 @@ class formularioPacientes : AppCompatActivity() {
         val potencia = Math.pow(estatura, exponente.toDouble())
         var res = peso/(potencia)
         val imc = res*10000
-        txtImc.text = imc.toString()
+        val redondea = (imc * 100.0).roundToInt() / 100.0
+        txtImc.text = redondea.toString()
     }
     fun hacerPI(v: View){
         //Aqui hacer PI
@@ -114,10 +118,12 @@ class formularioPacientes : AppCompatActivity() {
         val metros = estatura/100
         if (sexo == "Masculino"){
             val geb = 66.473+(13.7516*peso)+(5.0033*metros)-(6.755*edad)
-            txtGeb.text = geb.toString()
+            val redondea = (geb * 100.0).roundToInt() / 100.0
+            txtGeb.text = redondea.toString()
         }else{
             val geb = 655.0955+(9.5634*peso)+(1.8495*metros)-(4.6756*edad)
-            txtGeb.text = geb.toString()
+            val redondea = (geb * 100.0).roundToInt() / 100.0
+            txtGeb.text = redondea.toString()
         }
     }
 }

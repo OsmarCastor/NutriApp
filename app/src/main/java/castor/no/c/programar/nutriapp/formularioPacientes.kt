@@ -56,7 +56,7 @@ class formularioPacientes : AppCompatActivity() {
             txtImc.text = paciente.imc.toString()
             txtPi.text = paciente.pi.toString()
             txtGet.text = paciente.get.toString()
-            txtGeb.text = paciente.get.toString()
+            txtGeb.text = paciente.geb.toString()
             txtPorcentaje.text = paciente.porcentaje.toString()
         }
     }
@@ -106,7 +106,8 @@ class formularioPacientes : AppCompatActivity() {
         val geb = txtGeb.text.toString().toDouble()
         val porcentaje = txtPorcentaje.text.toString().toInt()
         var geaf = (porcentaje*geb)/100
-        val get = geb+.10+geaf
+        var eta = geb*.1
+        val get = geb+eta+geaf
         txtGet.text = get.toString()
     }
     fun hacerGEB(v: View){
@@ -115,13 +116,12 @@ class formularioPacientes : AppCompatActivity() {
         val estatura = txtEstatura.text.toString().toDouble()
         val sexo = txtSexo.text.toString()
         val edad = txtEdad.text.toString().toInt()
-        val metros = estatura/100
         if (sexo == "Masculino"){
-            val geb = 66.473+(13.7516*peso)+(5.0033*metros)-(6.755*edad)
+            val geb = 66.473+(13.7516*peso)+(5.0033*estatura)-(6.755*edad)
             val redondea = (geb * 100.0).roundToInt() / 100.0
             txtGeb.text = redondea.toString()
         }else{
-            val geb = 655.0955+(9.5634*peso)+(1.8495*metros)-(4.6756*edad)
+            val geb = 655.0955+(9.5634*peso)+(1.8495*estatura)-(4.6756*edad)
             val redondea = (geb * 100.0).roundToInt() / 100.0
             txtGeb.text = redondea.toString()
         }

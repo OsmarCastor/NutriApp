@@ -98,8 +98,26 @@ class formularioPacientes : AppCompatActivity() {
         txtPi.text = pi.toString()
     }
     fun hacerGET(v: View){
+        //Aqui se calcula el Gasto Energetico Total
+        val geb = txtGeb.text.toString().toDouble()
+        val porcentaje = txtPorcentaje.text.toString().toInt()
+        var geaf = (porcentaje*geb)/100
+        val get = geb+.10+geaf
+        txtGet.text = get.toString()
     }
     fun hacerGEB(v: View){
-
+        //Aqui se calcula el Gasto Energetico Basal
+        val peso = txtPeso.text.toString().toDouble()
+        val estatura = txtEstatura.text.toString().toDouble()
+        val sexo = txtSexo.text.toString()
+        val edad = txtEdad.text.toString().toInt()
+        val metros = estatura/100
+        if (sexo == "Masculino"){
+            val geb = 66.473+(13.7516*peso)+(5.0033*metros)-(6.755*edad)
+            txtGeb.text = geb.toString()
+        }else{
+            val geb = 655.0955+(9.5634*peso)+(1.8495*metros)-(4.6756*edad)
+            txtGeb.text = geb.toString()
+        }
     }
 }

@@ -9,7 +9,7 @@ import androidx.lifecycle.lifecycleScope
 import kotlinx.android.synthetic.main.activity_agregar_paciente.*
 import kotlinx.coroutines.launch
 
-class agregarPaciente : AppCompatActivity() {
+class AgregarPaciente : AppCompatActivity() {
     lateinit var txtNombre:EditText
     lateinit var txtEdad:EditText
     lateinit var txtSexo:EditText

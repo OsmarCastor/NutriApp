@@ -9,7 +9,7 @@ import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
 
-class formularioPacientes : AppCompatActivity() {
+class FormularioPacientes : AppCompatActivity() {
     lateinit var txtId:TextView
     lateinit var txtNombre:TextView
     lateinit var txtEdad:TextView

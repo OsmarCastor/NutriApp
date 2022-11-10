@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         Handler().postDelayed({
-            val intent = Intent(this, mostrarPaciente::class.java)
+            val intent = Intent(this, MostrarPaciente::class.java)
             startActivity(intent)
             finish()
         }, 3000)

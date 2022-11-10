@@ -14,7 +14,7 @@
         android:theme="@style/Theme.NutriApp"
         tools:targetApi="31">
         <activity
-            android:name=".formularioPacientes"
+            android:name=".FormularioPacientes"
             android:screenOrientation="portrait"
             android:exported="false">
             <meta-data
@@ -22,7 +22,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".mostrarPaciente"
+            android:name=".MostrarPaciente"
             android:screenOrientation="portrait"
             android:exported="false">
             <meta-data
@@ -33,7 +33,7 @@
             android:name=".formularioPaciente"
             android:exported="false" />
         <activity
-            android:name=".agregarPaciente"
+            android:name=".AgregarPaciente"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity

@@ -6,8 +6,10 @@ import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
+import com.google.android.filament.Box
 import kotlinx.android.synthetic.main.activity_agregar_paciente.*
 import kotlinx.coroutines.launch
+import java.lang.reflect.Modifier
 
 class AgregarPaciente : AppCompatActivity() {
     lateinit var txtNombre:EditText
@@ -34,7 +36,6 @@ class AgregarPaciente : AppCompatActivity() {
         supportActionBar?.hide()
         txtNacimiento.setOnClickListener{showDatePickerDialog()}
     }
-
     private fun showDatePickerDialog() {
         val datePicker = DatePickerFragment {day, month, year -> onDateSelected(day, month+1, year)}
         datePicker.show(supportFragmentManager, "datePicker")

@@ -5,8 +5,8 @@
     <string name="nombre_paciente">Ingrese el Nombre</string>
     <string name="edad_paciente">Ingrese la Edad</string>
     <string name="telefono_paciente">Ingrese el Teléfono</string>
-    <string name="peso_paciente">Ingresa el Peso(kg)</string>
-    <string name="talla_paciente">Ingrese la Estatura(cm)</string>
+    <string name="peso_paciente">Ingresa el Peso (en kg)</string>
+    <string name="talla_paciente">Ingrese la Estatura (en cm)</string>
     <string name="nacimiento_paciente">Ingrese la Fecha de Nacimiento</string>
     <string name="porcentaje">Ingrese el % de actividad física:</string>
     <string name="guardar">Guardar</string>
@@ -15,6 +15,6 @@
     <string name="boton_imc">Calcular IMC</string>
     <string name="boton_peso">Calcular Peso Ideal</string>
     <string name="boton_get">Calcular GET</string>
-    <string name="stringsexo">Ingresa el Sexo</string>
+    <string name="stringsexo">Sexo: Masculino, Femenino</string>
     <string name="boton_geb">Calcular GEB</string>
 </resources>

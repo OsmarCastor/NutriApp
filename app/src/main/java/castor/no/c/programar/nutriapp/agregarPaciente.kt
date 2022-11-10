@@ -42,9 +42,9 @@ class agregarPaciente : AppCompatActivity() {
     fun onDateSelected(day:Int, month:Int, year:Int){
         txtNacimiento.setText("$day/$month/$year")
     }
-
     fun agregarDatos(v: View) {
         //Aqui agrego
+        try {
         val nombre = txtNombre.text.toString()
         val edad = txtEdad.text.toString()
         val sexo = txtSexo.text.toString()
@@ -53,12 +53,18 @@ class agregarPaciente : AppCompatActivity() {
         val peso = txtPeso.text.toString().toDouble()
         val estatura = txtEstatura.text.toString().toDouble()
         val porcentaje = txtPorcentaje.text.toString().toInt()
-        lifecycleScope.launch{
-            val paciente = Pacientes(0, nombre, edad, sexo, telefono, fecha, peso, estatura, porcentaje,0.0,0.0,0.0, 0.0)
-            db.room.pacienteDao().insert(paciente)
+        if (nombre.equals("") or edad.equals("") or sexo.equals("") or telefono.equals("") or fecha.equals("") or peso.equals("") or estatura.equals("") or porcentaje.equals("")){
+            Toast.makeText(this, "Datos incompletos", Toast.LENGTH_LONG).show()
+        }else{
+            lifecycleScope.launch{
+                val paciente = Pacientes(0, nombre, edad, sexo, telefono, fecha, peso, estatura, porcentaje,0.0,0.0,0.0, 0.0)
+                db.room.pacienteDao().insert(paciente)
+            }
+            Toast.makeText(this, "Paciente Registrado", Toast.LENGTH_LONG).show()
+            finish()
         }
-        Toast.makeText(this, "Paciente Registrado", Toast.LENGTH_LONG).show()
-        finish()
+        }catch (e: Exception){
+            Toast.makeText(this, "Datos incompletos", Toast.LENGTH_LONG).show()
+        }
     }
-
 }

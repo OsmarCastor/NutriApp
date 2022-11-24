@@ -35,6 +35,11 @@ class AgregarPaciente : AppCompatActivity() {
         db = this.application as NutriApp
         supportActionBar?.hide()
         txtNacimiento.setOnClickListener{showDatePickerDialog()}
+        txtNacimiento.onFocusChangeListener = View.OnFocusChangeListener{ _, hasFocus ->
+            if (hasFocus){
+                showDatePickerDialog()
+            }
+        }
     }
     private fun showDatePickerDialog() {
         val datePicker = DatePickerFragment {day, month, year -> onDateSelected(day, month+1, year)}
@@ -42,6 +47,7 @@ class AgregarPaciente : AppCompatActivity() {
     }
     fun onDateSelected(day:Int, month:Int, year:Int){
         txtNacimiento.setText("$day/$month/$year")
+        txtPeso.requestFocus()
     }
     fun agregarDatos(v: View) {
         //Aqui agrego

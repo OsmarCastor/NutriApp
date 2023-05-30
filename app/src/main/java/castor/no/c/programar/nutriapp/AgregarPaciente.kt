@@ -52,7 +52,7 @@ class AgregarPaciente : AppCompatActivity() {
     fun agregarDatos(v: View) {
         //Aqui agrego
         try {
-        val nombre = txtNombre.text.toString()
+        val nombre = txtNombre.text.toString().uppercase()
         val edad = txtEdad.text.toString()
         val sexo = txtSexo.text.toString()
         val telefono = txtTelefono.text.toString()

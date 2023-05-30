@@ -17,4 +17,5 @@
     <string name="boton_get">Calcular GET</string>
     <string name="stringsexo">Sexo: Masculino, Femenino</string>
     <string name="boton_geb">Calcular GEB</string>
+    <string name="titulo_actualizar">Actualizar Datos</string>
 </resources>

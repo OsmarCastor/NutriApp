@@ -66,11 +66,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="30dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="30dp"
         android:clickable="true"
-        android:onClick="salir"
-        android:src="@drawable/salir"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:onClick="actualizarPaciente"
+        android:src="@drawable/available_updates_52px"
+        app:layout_constraintBottom_toTopOf="@+id/btnBorrar"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="SpeakableTextPresentCheck" />
 
@@ -79,11 +79,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="30dp"
-        android:layout_marginBottom="120dp"
+        android:layout_marginBottom="30dp"
         android:clickable="true"
         android:onClick="guardarBD"
         android:src="@drawable/save_02"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/floatingActionButton"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="SpeakableTextPresentCheck" />
 
@@ -372,5 +372,18 @@
         android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/txtPiPaciente"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnBorrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        android:clickable="true"
+        android:onClick="borrarPaciente"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/delete_60px"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

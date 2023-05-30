@@ -1,5 +1,6 @@
 package castor.no.c.programar.nutriapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -60,8 +61,10 @@ class FormularioPacientes : AppCompatActivity() {
             txtPorcentaje.text = paciente.porcentaje.toString()
         }
     }
-    fun salir(v: View) {
-        finish()
+    fun actualizarPaciente(v: View) {
+        val intent = Intent(this, ActualizarDatos::class.java)
+        startActivity(intent)
+        //Toast.makeText(this, "Hago clic", Toast.LENGTH_LONG).show()
     }
     fun guardarBD(v: View){
         val id = txtId.text.toString().toInt()
@@ -103,12 +106,16 @@ class FormularioPacientes : AppCompatActivity() {
     }
     fun hacerGET(v: View){
         //Aqui se calcula el Gasto Energetico Total
-        val geb = txtGeb.text.toString().toDouble()
-        val porcentaje = txtPorcentaje.text.toString().toInt()
-        var geaf = (porcentaje*geb)/100
-        var eta = geb*.1
-        val get = geb+eta+geaf
-        txtGet.text = get.toString()
+        if (txtGeb.text.toString().toDouble() == 0.0){
+            Toast.makeText(this, "Calcula el GEB primero", Toast.LENGTH_LONG).show()
+        }else{
+            val geb = txtGeb.text.toString().toDouble()
+            val porcentaje = txtPorcentaje.text.toString().toInt()
+            var geaf = (porcentaje*geb)/100
+            var eta = geb*.1
+            val get = geb+eta+geaf
+            txtGet.text = get.toString()
+        }
     }
     fun hacerGEB(v: View){
         //Aqui se calcula el Gasto Energetico Basal
@@ -125,5 +132,8 @@ class FormularioPacientes : AppCompatActivity() {
             val redondea = (geb * 100.0).roundToInt() / 100.0
             txtGeb.text = redondea.toString()
         }
+    }
+    fun borrarPaciente(V: View){
+        Toast.makeText(this, "Hago Clic", Toast.LENGTH_LONG).show()
     }
 }

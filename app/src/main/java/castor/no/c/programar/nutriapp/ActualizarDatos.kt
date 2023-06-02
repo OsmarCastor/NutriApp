@@ -1,5 +1,6 @@
 package castor.no.c.programar.nutriapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.lifecycle.lifecycleScope
 import kotlinx.android.synthetic.main.activity_actualizar_datos.txtIdPa
 import kotlinx.android.synthetic.main.activity_actualizar_datos.txtPesos
 import kotlinx.android.synthetic.main.activity_agregar_paciente.txtNacimiento
+import kotlinx.android.synthetic.main.activity_formulario_pacientes.txtIdPaciente
 import kotlinx.coroutines.launch
 
 

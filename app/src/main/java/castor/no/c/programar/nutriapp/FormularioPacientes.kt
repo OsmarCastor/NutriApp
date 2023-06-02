@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
+import kotlinx.android.synthetic.main.activity_formulario_pacientes.txtIdPaciente
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
 
@@ -63,8 +64,8 @@ class FormularioPacientes : AppCompatActivity() {
     }
     fun actualizarPaciente(v: View) {
         val intent = Intent(this, ActualizarDatos::class.java)
+        intent.putExtra("idpacientes", txtIdPaciente.text.toString().toInt())
         startActivity(intent)
-        //Toast.makeText(this, "Hago clic", Toast.LENGTH_LONG).show()
     }
     fun guardarBD(v: View){
         val id = txtId.text.toString().toInt()

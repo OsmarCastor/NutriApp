@@ -16,7 +16,6 @@ class MostrarPaciente : AppCompatActivity(), cellClickListenerClient {
         setContentView(R.layout.activity_mostrar_paciente)
         supportActionBar?.hide()
         recycler = findViewById(R.id.rv_persona)
-
         db = this.application as NutriApp
     }
     fun abrirAregar(v: View){
@@ -37,11 +36,9 @@ class MostrarPaciente : AppCompatActivity(), cellClickListenerClient {
         val adaptador = Adaptador(this, list, this)
         recycler.adapter = adaptador
     }
-
     override fun clickExpediente(paciente: Pacientes) {
         val intent = Intent(this, FormularioPacientes::class.java)
         intent.putExtra("idpaciente",paciente.idPaciente)
         startActivity(intent)
-        //Log.e("a","${paciente.nombre}")
     }
 }

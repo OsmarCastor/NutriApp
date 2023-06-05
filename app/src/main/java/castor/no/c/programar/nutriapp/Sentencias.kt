@@ -16,5 +16,6 @@ interface Sentencias {
     @Insert
     suspend fun insert(persona: Pacientes)
 
-
+    @Delete
+    suspend fun delete(persona: Pacientes)
 }

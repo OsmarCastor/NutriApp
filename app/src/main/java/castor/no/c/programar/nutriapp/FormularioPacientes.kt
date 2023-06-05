@@ -71,7 +71,6 @@ class FormularioPacientes : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        Toast.makeText(this, "Regresó", Toast.LENGTH_SHORT).show()
         lifecycleScope.launch{
             val paciente = db.room.pacienteDao().getById(id)
             txtId.text = id.toString()
@@ -157,6 +156,24 @@ class FormularioPacientes : AppCompatActivity() {
         }
     }
     fun borrarPaciente(V: View){
-        Toast.makeText(this, "Hago Clic", Toast.LENGTH_LONG).show()
+        val id = txtId.text.toString().toInt()
+        val nombre = txtNombre.text.toString()
+        val edad = txtEdad.text.toString()
+        val sexo = txtSexo.text.toString()
+        val telefono = txtTelefono.text.toString()
+        val fecha = txtFecha.text.toString()
+        val peso = txtPeso.text.toString().toDouble()
+        val estatura = txtEstatura.text.toString().toDouble()
+        val porcentaje = txtPorcentaje.text.toString().toInt()
+        val imc = txtImc.text.toString().toDouble()
+        val pi = txtPi.text.toString().toDouble()
+        val get = txtGet.text.toString().toDouble()
+        val geb = txtGeb.text.toString().toDouble()
+        lifecycleScope.launch{
+            val paciente = Pacientes(id, nombre, edad, sexo, telefono, fecha, peso, estatura, porcentaje, imc, pi, get, geb)
+            db.room.pacienteDao().delete(paciente)
+        }
+        Toast.makeText(this, "Paciente eliminado", Toast.LENGTH_LONG).show()
+        finish()
     }
 }

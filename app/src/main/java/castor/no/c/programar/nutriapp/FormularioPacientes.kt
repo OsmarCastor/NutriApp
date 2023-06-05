@@ -26,6 +26,7 @@ class FormularioPacientes : AppCompatActivity() {
     lateinit var txtGet:TextView
     lateinit var txtGeb:TextView
     lateinit var db :NutriApp
+    var id = -1
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_formulario_pacientes)
@@ -44,7 +45,7 @@ class FormularioPacientes : AppCompatActivity() {
         txtPi = findViewById(R.id.txtPiPaciente)
         txtGet = findViewById(R.id.txtGetPAciente)
         txtGeb = findViewById(R.id.txtGebPaciente)
-        val id = intent.getIntExtra("idpaciente", 0)
+        id = intent.getIntExtra("idpaciente", 0)
         lifecycleScope.launch{
             val paciente = db.room.pacienteDao().getById(id)
             txtId.text = id.toString()
@@ -65,7 +66,28 @@ class FormularioPacientes : AppCompatActivity() {
     fun actualizarPaciente(v: View) {
         val intent = Intent(this, ActualizarDatos::class.java)
         intent.putExtra("idpacientes", txtIdPaciente.text.toString().toInt())
-        startActivity(intent)
+        startActivityForResult(intent, 1)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        Toast.makeText(this, "Regresó", Toast.LENGTH_SHORT).show()
+        lifecycleScope.launch{
+            val paciente = db.room.pacienteDao().getById(id)
+            txtId.text = id.toString()
+            txtNombre.text = paciente.nombre
+            txtEdad.text = paciente.edad
+            txtSexo.text = paciente.sexo
+            txtEstatura.text = paciente.talla.toString()
+            txtPeso.text = paciente.peso.toString()
+            txtFecha.text = paciente.fecha
+            txtTelefono.text = paciente.telefono
+            txtImc.text = paciente.imc.toString()
+            txtPi.text = paciente.pi.toString()
+            txtGet.text = paciente.get.toString()
+            txtGeb.text = paciente.geb.toString()
+            txtPorcentaje.text = paciente.porcentaje.toString()
+        }
     }
     fun guardarBD(v: View){
         val id = txtId.text.toString().toInt()

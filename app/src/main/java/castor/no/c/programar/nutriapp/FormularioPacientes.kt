@@ -51,7 +51,11 @@ class FormularioPacientes : AppCompatActivity() {
             txtId.text = id.toString()
             txtNombre.text = paciente.nombre
             txtEdad.text = paciente.edad
-            txtSexo.text = paciente.sexo
+            if (paciente.sexo == "Masculino"){
+                txtSexo.text = "M"
+            }else{
+                txtSexo.text = "F"
+            }
             txtEstatura.text = paciente.talla.toString()
             txtPeso.text = paciente.peso.toString()
             txtFecha.text = paciente.fecha
@@ -76,7 +80,11 @@ class FormularioPacientes : AppCompatActivity() {
             txtId.text = id.toString()
             txtNombre.text = paciente.nombre
             txtEdad.text = paciente.edad
-            txtSexo.text = paciente.sexo
+            if (paciente.sexo == "Masculino"){
+                txtSexo.text = "M"
+            }else{
+                txtSexo.text = "F"
+            }
             txtEstatura.text = paciente.talla.toString()
             txtPeso.text = paciente.peso.toString()
             txtFecha.text = paciente.fecha

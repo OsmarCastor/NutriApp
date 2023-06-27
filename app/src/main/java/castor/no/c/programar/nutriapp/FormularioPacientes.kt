@@ -100,6 +100,11 @@ class FormularioPacientes : AppCompatActivity() {
         val id = txtId.text.toString().toInt()
         val nombre = txtNombre.text.toString()
         val edad = txtEdad.text.toString()
+        if (txtSexo.text == "M"){
+            txtSexo.text = "Masculino"
+        }else{
+            txtSexo.text = "Femenino"
+        }
         val sexo = txtSexo.text.toString()
         val telefono = txtTelefono.text.toString()
         val fecha = txtFecha.text.toString()
